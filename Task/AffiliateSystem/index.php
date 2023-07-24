@@ -31,10 +31,9 @@ $customer2 = new Customer("Lê Công Tiến", "Hưng Yên", $sarah);
 $customer3 = new Customer("Lê Công Phượng", "Hải Phòng", $eva);
 $customer4 = new Customer("Lê Công Nông", "Hải Phòng", $jimmy);
 $customer5 = new Customer("Lê Công Danh", "Hải Phòng", $henry);
-$customer6 = new Customer("Lê Công Mỹ", "Hải Phòng", null);
-$customer7 = new Customer("Lê Công Huy", "Hải Phòng", null);
+$customer6 = new Customer("Lê Công Mỹ", "Hải Phòng", $john);
+$customer7 = new Customer("Lê Công Huy", "Hải Phòng");
 
-$john->refer($customer6);
 $john->refer($customer7);
 
 //Y4. Mỗi khách hàng này lại đặt 1 đơn hàng trị giá 800$.
