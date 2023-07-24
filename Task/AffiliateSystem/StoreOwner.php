@@ -14,7 +14,7 @@ class StoreOwner
 
     public function setBalance($balance)
     {
-        $this->balance = $balance;
+        $this->balance += $balance;
     }
 
     public function printBalance()

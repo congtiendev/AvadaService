@@ -36,7 +36,7 @@ class Affiliate
 
     public function setBalance($balance)
     {
-        $this->balance = $balance;
+        $this->balance += $balance;
     }
 
 
