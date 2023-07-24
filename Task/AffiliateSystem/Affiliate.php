@@ -28,9 +28,9 @@ class Affiliate
     public function refer($obj)
     {
         if ($obj instanceof Affiliate) { //nếu đối tượng được giới thiệu là Affiliate
-            $this->subAffiliates[] = $obj;
+            $this->subAffiliates[] = $obj; //thêm đối tượng vào danh sách Affiliate được giới thiệu
         } else {
-            $this->customers[] = $obj;
+            $this->customers[] = $obj; //thêm đối tượng vào danh sách khách hàng được giới thiệu
         }
     }
 
