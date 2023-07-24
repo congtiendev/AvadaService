@@ -30,12 +30,14 @@ class Customer
 
     private function calculateCommissions($total, $affiliate, StoreOwner $storeOwner)
     {
-        if ($affiliate->upperAffiliate !== null) {
-            $affiliate->addToBalance($total * 0.05);
-            $this->calculateCommissions($total * 0.1, $affiliate->upperAffiliate, $storeOwner);
+        if ($affiliate->upperAffiliate !== null) { // Nếu affiliate hiện tại có affiliate bậc trên
+            $affiliate->setBalance($total * 0.05); // Affiliate bậc 1 nhận 5% tiền hoa hồng
+            $this->calculateCommissions($total * 0.1, $affiliate->upperAffiliate, $storeOwner); // Affiliate bậc 2 nhận 10% tiền hoa hồng
+        } else if ($affiliate->upperAffiliate === null) {
+            $affiliate->setBalance($total * 0.1); // Affiliate hiện tại nhận 10% tiền hoa hồng
+            $storeOwner->setBalance($total * 0.9); // Chủ cửa hàng nhận phần còn lại là 90% tiền hoa hồng
         } else {
-            $affiliate->setBalance($total * 0.05);
-            $storeOwner->setBalance($total * 0.85);
+            $storeOwner->setBalance($total); // Chủ cửa hàng nhận 100% tiền hoa hồng
         }
     }
 }
