@@ -34,10 +34,11 @@ class Affiliate
         }
     }
 
-    public function addToBalance($amount)
+    public function setBalance($balance)
     {
-        $this->balance += $amount;
+        $this->balance = $balance;
     }
+
 
     public function withdraw($amount)
     {

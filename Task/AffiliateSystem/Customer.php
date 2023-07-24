@@ -19,23 +19,22 @@ class Customer
         $this->affiliate = $affiliate;
     }
 
-    public function placeOrder($total)
+    public function placeOrder($total, StoreOwner $storeOwner)
     {
         $order = new Order($total);
         if ($this->affiliate !== null) {
-            $this->calculateCommissions($total, $this->affiliate);
+            $this->calculateCommissions($total, $this->affiliate, $storeOwner);
         }
         return $order;
     }
 
-    private function calculateCommissions($total, $affiliate)
-    { //Tính hoa hồng cho Affiliate
-        $storeOwner = new StoreOwner('Moyes');
+    private function calculateCommissions($total, $affiliate, StoreOwner $storeOwner)
+    {
         if ($affiliate->upperAffiliate !== null) {
             $affiliate->addToBalance($total * 0.05);
-            $this->calculateCommissions($total * 0.1, $affiliate->upperAffiliate);
-        } elseif ($affiliate->storeOwner !== null) {
-            $affiliate->addToBalance($total * 0.05);
+            $this->calculateCommissions($total * 0.1, $affiliate->upperAffiliate, $storeOwner);
+        } else {
+            $affiliate->setBalance($total * 0.05);
             $storeOwner->setBalance($total * 0.85);
         }
     }

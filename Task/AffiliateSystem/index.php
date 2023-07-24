@@ -39,19 +39,25 @@ $john->refer($customer7);
 
 //Y4. Mỗi khách hàng này lại đặt 1 đơn hàng trị giá 800$.
 $order1 = new Order(800);
-$customer1->placeOrder($order1->total);
+$customer1->placeOrder($order1->total, $moyes);
 
 $order2 = new Order(800);
-$customer2->placeOrder($order2->total);
+$customer2->placeOrder($order2->total, $moyes);
 
 $order3 = new Order(800);
-$customer3->placeOrder($order3->total);
+$customer3->placeOrder($order3->total, $moyes);
 
 $order4 = new Order(800);
-$customer4->placeOrder($order4->total);
+$customer4->placeOrder($order4->total, $moyes);
 
 $order5 = new Order(800);
-$customer5->placeOrder($order5->total);
+$customer5->placeOrder($order5->total, $moyes);
+
+$order6 = new Order(800);
+$customer6->placeOrder($order6->total, $moyes);
+
+$order7 = new Order(800);
+$customer7->placeOrder($order7->total, $moyes);
 
 $john->printInfo();
 //Y5. In ra danh sách các affiliate mà John giới thiệu được, bao gồn Name và Balance của mỗi affiliate.
