@@ -55,7 +55,7 @@ class Affiliate
         }
     }
 
-    //Hiển thị thông tin của chính Affiliate đó
+    //
     public function printInfo()
     {
         $storeOwner = new StoreOwner('Moyes');
@@ -68,6 +68,7 @@ class Affiliate
         }
     }
 
+    //PrintSubAff: in ra danh sách các Affiliate mà đối tượng này giới thiệu đến cửa hàng
     public function printSubAffiliates()
     {
         echo "--------------------------Danh sách Affiliate của $this->name ---------------" . "<br>";
